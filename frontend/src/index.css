@@ -31,3 +31,36 @@ body {
   box-shadow: 0px 4px 4px #502275;
   height: 60px;
 }
+
+#username {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#username:before {
+  content: "Hi! "
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.dropdown-menu {
+  width: 100%;
+  background-color: rgba(102, 126, 234, 1) !important;
+   box-shadow: 0px 4px 4px #502275;
+}
+
+input,
+select {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+.profile, .logout {
+  transition: .5s ease-out;
+}
+
+.profile:hover, .logout:hover {
+color: white !important;
+}

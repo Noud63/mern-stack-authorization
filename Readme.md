@@ -1,6 +1,6 @@
 <h1>MERN Stack, Authentication, Authorization and validation.</h1>
 
-Frontend: React, Redux-toolkit, RTK and Bootstrap.<br>
+Frontend: React, Redux-toolkit, RTK Query and Bootstrap.<br>
 Backend: Express, Node, Mongoose and MongoDB<br><br>
 
 Bcrypt for hashing passwords.<br>

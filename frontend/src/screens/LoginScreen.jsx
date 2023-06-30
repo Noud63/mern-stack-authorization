@@ -7,6 +7,7 @@ import { useLoginMutation } from "../slices/usersApiSlice";
 import { setCredentials } from "../slices/authSlice";
 import { toast } from "react-toastify";
 import {HiArrowNarrowRight } from "react-icons/hi"; 
+import Loader from "../components/Loader";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -28,11 +29,8 @@ const LoginScreen = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await login({
-        email,
-        password,
-      }).unwrap();                                   /* backend request */
-      dispatch( setCredentials({ ...res }))                   /* add user to localstorage and state*/;                                         
+      const res = await login({ email, password,}).unwrap();          /* backend request */
+      dispatch(setCredentials({...res}))                           /* add user to localstorage and state*/;                                         
     } catch (error) {
       toast.error(error?.data?.message || error.error)
     }
@@ -46,7 +44,7 @@ const LoginScreen = () => {
         <Form.Group className="my-2" controlId="email">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
-            className="bg-transparent border-dark"
+            className="input bg-transparent border-dark"
             type="email"
             placeholder="Enter Email"
             value={email}
@@ -57,13 +55,15 @@ const LoginScreen = () => {
         <Form.Group className="my-2" controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
-            className="bg-transparent border-dark"
+            className="input bg-transparent border-dark"
             type="password"
             placeholder="Enter password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
+
+        {isLoading && <Loader />}
 
         <Button type="submit" variant="custom" className="mt-3">
           Sign In
