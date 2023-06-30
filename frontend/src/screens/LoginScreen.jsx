@@ -6,6 +6,7 @@ import FormContainer from "../components/FormContainer";
 import { useLoginMutation } from "../slices/usersApiSlice";
 import { setCredentials } from "../slices/authSlice";
 import { toast } from "react-toastify";
+import {HiArrowNarrowRight } from "react-icons/hi"; 
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -38,14 +39,14 @@ const LoginScreen = () => {
   };
 
   return (
-    <FormContainer>
+    <FormContainer className="border border-warning">
       <h1>Sign In</h1>
 
       <Form onSubmit={submitHandler}>
         <Form.Group className="my-2" controlId="email">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
-            className="bg-secondary border-dark"
+            className="bg-transparent border-dark"
             type="email"
             placeholder="Enter Email"
             value={email}
@@ -56,7 +57,7 @@ const LoginScreen = () => {
         <Form.Group className="my-2" controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
-            className="bg-secondary border-dark"
+            className="bg-transparent border-dark"
             type="password"
             placeholder="Enter password"
             value={password}
@@ -64,16 +65,16 @@ const LoginScreen = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="dark" className="mt-3">
+        <Button type="submit" variant="custom" className="mt-3">
           Sign In
         </Button>
       </Form>
 
       <Row className="py-3">
-        <Col>
-          New Customer?{" "}
+        <Col className="text-white">
+          New Customer? <HiArrowNarrowRight/>{" "}
           <Link to="/register" className="text-white">
-            Register
+            <span>Register</span>
           </Link>
         </Col>
       </Row>

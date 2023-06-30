@@ -69,7 +69,7 @@ const logoutUser = asyncHandler(async (req, res) => {
 
 // @desc Get user profile
 // route GET /api/users/profile
-// @access Private ( you need a json web token)
+// @access Private ( you need to be logged in and a json web token)
 const getUserProfile = asyncHandler(async (req, res) => {
   const user = {
     _id: req.user._id,

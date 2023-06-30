@@ -14,3 +14,5 @@ export default defineConfig({
     },
   },
 });
+
+//Whitout proxy use full url in the frontend http://localhost:5000/api/users/

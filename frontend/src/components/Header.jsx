@@ -1,14 +1,15 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import { LinkContainer } from "react-router-bootstrap";
+import { FaOrcid } from "react-icons/fa6";
 
 const Header = () => {
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+      <Navbar className="header" style={{ background: 'rgba(102, 126, 234, 1)'}} expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>MERN App</Navbar.Brand>
+            <Navbar.Brand className="fw-bold fs-2 d-flex align-items-center"><FaOrcid/>&nbsp;M E R N - A U T H</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
