@@ -57,13 +57,13 @@ const [ logoutApiCall ] = useLogoutMutation()
               
                 <LinkContainer to="/login">
                 <Nav.Link>
-                  <FaSignInAlt /> Sign In
+                  <FaSignInAlt className="fs-4"/> Sign In
                 </Nav.Link>
               </LinkContainer>
 
               <LinkContainer to="/register">
                 <Nav.Link>
-                  <FaSignOutAlt /> Sign Up
+                  <FaSignOutAlt className="fs-4"/> Sign Up
                 </Nav.Link>
               </LinkContainer>
               </>)
